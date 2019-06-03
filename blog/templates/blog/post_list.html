@@ -7,16 +7,11 @@
 			<h1><a href="/">Gabriel's Blog</a></h1>
 		</div>
 
-		<div>
-			<h2><a href="">First Post</a></h2>
-			<p><h4>Johnny's in the basement mixin' up the medicine, I'm on the pavement, thinkin' 'bout the government</h4></p>
-			<p>published: 3.22.65 15:16</p>
-		</div>
-
-		<div>
-			<h2><a href="">Second Post</a></h2>
-			<p><h4>The man in the trenchcoat, badge out laid off says he's got a bad cough wants to get it paid off</h4></p>
-			<p>published: 5.12.69 21:12</p>
-		</div>
-	</body>
+		{% for post in posts %}
+			<div>
+				<h2><a href=''>{{ post.title }}</a></h2>
+				<p>{{ post.text|linebreaksbr }}</p>
+				<p>published: {{ post.publish_date }}</p>
+			</div>
+		{% endfor %}
 </html>
